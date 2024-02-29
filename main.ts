@@ -50,7 +50,6 @@ basic.forever(function on_forever() {
                     }
                 }
             } else {
-                serial.writeLine("💥⚠ERROR !")
                 logging=false;
             }
             if (logging) {
