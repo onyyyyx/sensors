@@ -1,3 +1,14 @@
+input.onPinPressed(TouchPin.P1, function () {
+    if (logging) {
+        ispaused = true
+        n = 20
+        serial.writeLine("P1: set n to 50")
+        basic.showNumber(2)
+        control.waitMicros(500000)
+        basic.clearScreen()
+        ispaused = false
+    }
+})
 input.onPinPressed(TouchPin.P0, function () {
     if (logging) {
         ispaused = true
@@ -12,16 +23,8 @@ input.onPinPressed(TouchPin.P0, function () {
 input.onButtonPressed(Button.A, function () {
     max += 0 - n
 })
-input.onPinPressed(TouchPin.P2, function () {
-    if (logging) {
-        ispaused = true
-        n = 500
-        serial.writeLine("P2: set n to 500")
-        basic.showNumber(3)
-        control.waitMicros(500000)
-        basic.clearScreen()
-        ispaused = false
-    }
+input.onButtonPressed(Button.B, function () {
+    max += n
 })
 input.onButtonPressed(Button.AB, function () {
     if (logging) {
@@ -33,15 +36,12 @@ input.onButtonPressed(Button.AB, function () {
     }
     basic.clearScreen()
 })
-input.onButtonPressed(Button.B, function () {
-    max += n
-})
-input.onPinPressed(TouchPin.P1, function () {
+input.onPinPressed(TouchPin.P2, function () {
     if (logging) {
         ispaused = true
-        n = 50
-        serial.writeLine("P1: set n to 50")
-        basic.showNumber(2)
+        n = 500
+        serial.writeLine("P2: set n to 500")
+        basic.showNumber(3)
         control.waitMicros(500000)
         basic.clearScreen()
         ispaused = false
