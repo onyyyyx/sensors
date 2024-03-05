@@ -60,7 +60,7 @@ basic.forever(function () {
         led.plotBarGraph(
         input.magneticForce(Dimension.Strength),
         max,
-        true
+        false
         )
         datalogger.log(
         datalogger.createCV("Force (µT)", input.magneticForce(Dimension.Strength)),
